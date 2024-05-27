@@ -1,5 +1,7 @@
 Complex soscial systems is very rare topic. It entails combining dynamical systems behaviour with social science notions. 
+
 This project uses AI code capabilities to perform simple tasks on complex social systems modelling activity
+
 Ten main areas where also AI identify: 
 1. Social Network Analysis: Developing algorithms to analyze social networks, identify key influencers, detect communities, etc.
 2. Opinion Dynamics: Simulating how opinions evolve within a population over time, considering factors like persuasion, influence, and social interactions.
@@ -11,4 +13,5 @@ Ten main areas where also AI identify:
 8. Community Detection: Implementing algorithms to identify communities or clusters within social networks, based on patterns of connections or interactions.
 9. Social Influence Modeling: Building models to understand how individuals influence each other's behavior, beliefs, and decisions within a social system.
 10. Collaborative Filtering: Creating algorithms to make predictions or recommendations based on the preferences and behaviors of similar users within a social system.
+
 Taylor made code programming activity might use this initial templates as a quick short basis provided by AI. 
