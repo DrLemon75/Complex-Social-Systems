@@ -1,0 +1,21 @@
+# A Python program that utilizes the NetworkX library to implement a basic community detection model based on the Louvain method, a popular algorithm for detecting communities in networks.
+
+import networkx as nx
+import community
+
+# Create a sample social network graph
+G = nx.karate_club_graph()
+
+# Detect communities using the Louvain method
+partition = community.best_partition(G)
+
+# Print the detected communities
+communities = {}
+for node, community_id in partition.items():
+    if community_id in communities:
+        communities[community_id].append(node)
+    else:
+        communities[community_id] = [node]
+
+for idx, nodes in communities.items():
+    print(f"Community {idx + 1}: {nodes}")
