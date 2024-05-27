@@ -1,0 +1,21 @@
+# Here is a basic Python program that sets up a recommendation system model to recommend items to users based on their preferences
+# In this program, we create a simple recommendation system model using item-item collaborative filtering based on user preferences. 
+# The program calculates item-item similarity using cosine similarity and recommends items to a user based on their preferences. 
+# You can enhance this model by incorporating more advanced recommendation algorithms, handling implicit feedback, and improving recommendation quality based on social network connections or user interactions.
+
+
+import numpy as np
+from sklearn.metrics.pairwise import cosine_similarity
+
+# Sample user-item matrix (preferences)
+user_item_matrix = np.array([[1, 0, 1, 1],
+                             [0, 1, 1, 0],
+                             [1, 1, 0, 1]])
+
+# Calculate item-item similarity using cosine similarity
+item_item_similarity = cosine_similarity(user_item_matrix.T)
+
+# Recommend items to a user based on their preferences
+user_preferences = np.array([1, 0, 1])  # Sample user preferences
+recommended_items = np.argmax(np.dot(user_preferences, item_item_similarity))
+print("Recommended item:", recommended_items)
