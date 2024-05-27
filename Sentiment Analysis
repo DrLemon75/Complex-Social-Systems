@@ -1,0 +1,28 @@
+# Here is a basic Python program that sets up a sentiment analysis model to classify sentiment in social media data
+# In this program, we use the TextBlob library to perform sentiment analysis on social media data (tweets or comments). 
+# The classify_sentiment function uses TextBlob to determine whether a piece of text has a positive, neutral, or negative sentiment. 
+# You can enhance this model by incorporating more advanced sentiment analysis techniques, training custom sentiment analysis models, and analyzing sentiment trends in social media data.
+
+from textblob import TextBlob
+
+# Function to classify sentiment using TextBlob
+def classify_sentiment(text):
+    analysis = TextBlob(text)
+    if analysis.sentiment.polarity > 0:
+        return "Positive"
+    elif analysis.sentiment.polarity == 0:
+        return "Neutral"
+    else:
+        return "Negative"
+
+# Sample social media data - tweets or comments
+social_media_data = [
+    "I love this product! It's amazing ❤️",
+    "Neutral opinion on the service provided.",
+    "Had a terrible experience with customer support 😡"
+]
+
+# Classify sentiment for each data point
+for data in social_media_data:
+    sentiment = classify_sentiment(data)
+    print(f"Sentiment: {sentiment} - Text: {data}")
