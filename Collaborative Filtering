@@ -1,0 +1,39 @@
+# create a basic collaborative filtering model that provides recommendations based on the preferences of similar users. 
+# We will simulate user-item ratings and predict ratings for new items using collaborative filtering.
+# In this program, we create a simple collaborative filtering model that predicts item ratings for a user based on similar users' ratings. 
+# The collaborative_filtering_predict function calculates the predicted rating for a user on a specific item using cosine similarity. 
+# You can enhance this model by using more advanced collaborative filtering techniques, handling sparse data, and incorporating user-item biases for more accurate recommendations.
+
+
+import numpy as np
+
+# Generate sample user-item ratings matrix
+user_item_matrix = np.array([[3, 0, 4, 0],
+                              [0, 4, 5, 0],
+                              [0, 3, 0, 4]])
+
+# Function to predict item ratings for a user based on collaborative filtering
+def collaborative_filtering_predict(user_item_matrix, user_id, item_id):
+    ratings = user_item_matrix[user_id]
+    similarities = []
+    
+    for i in range(len(user_item_matrix)):
+        if i != user_id and user_item_matrix[i][item_id] != 0:
+            similarities.append((i, np.dot(ratings, user_item_matrix[i]) / (np.linalg.norm(ratings) * np.linalg.norm(user_item_matrix[i]))))
+    
+    prediction = 0
+    similarity_sum = 0
+    for user, similarity in similarities:
+        prediction += similarity * user_item_matrix[user][item_id]
+        similarity_sum += similarity
+    
+    if similarity_sum == 0:
+        return 0
+    
+    return prediction / similarity_sum
+
+# Make predictions for a user and an item
+user_id = 0
+item_id = 1
+predicted_rating = collaborative_filtering_predict(user_item_matrix, user_id, item_id)
+print(f"Predicted rating for user {user_id} on item {item_id}: {predicted_rating}")
