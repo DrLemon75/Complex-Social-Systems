@@ -1,0 +1,21 @@
+# Here is a basic Python program that sets up a simple game theory model to study strategic interactions between players
+# In this program, we define a simple 2-player game with a payoff matrix. Each player selects a strategy, and based on their strategies, they receive corresponding payoffs from the matrix. 
+# This model can be expanded by adding more players, strategies, and more complex payoff structures to simulate and analyze strategic interactions and decision-making in social contexts using game theory concepts.
+
+import numpy as np
+
+# Define the payoff matrix for a 2-player game
+payoff_matrix = np.array([[3, 0],
+                          [5, 1]])
+
+# Define strategies for Player 1 and Player 2
+player1_strategy = 0  # Player 1 chooses row 0
+player2_strategy = 1  # Player 2 chooses column 1
+
+# Get the payoffs for Player 1 and Player 2 based on their chosen strategies
+player1_payoff = payoff_matrix[player1_strategy, player2_strategy]
+player2_payoff = payoff_matrix[player2_strategy, player1_strategy]
+
+# Print the payoffs for each player
+print("Player 1 payoff:", player1_payoff)
+print("Player 2 payoff:", player2_payoff)
