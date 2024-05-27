@@ -1,0 +1,21 @@
+# Here is a basic Python program that sets up a social network analysis model using the NetworkX library
+
+import networkx as nx
+
+# Create a new directed graph
+social_network = nx.DiGraph()
+
+# Add nodes representing users
+users = ["Alice", "Bob", "Charlie", "David", "Eve"]
+social_network.add_nodes_from(users)
+
+# Add edges representing relationships/friendships
+relationships = [("Alice", "Bob"), ("Alice", "Charlie"), ("Bob", "David"), ("Charlie", "Eve"), ("Eve", "Alice")]
+social_network.add_edges_from(relationships)
+
+# Perform social network analysis tasks here such as identifying key influencers, detecting communities, etc.
+
+# For example, to find the key influencers based on degree centrality:
+degree_centrality = nx.degree_centrality(social_network)
+key_influencers = sorted(degree_centrality, key=degree_centrality.get, reverse=True)
+print("Key Influencers:", key_influencers)
