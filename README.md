@@ -13,5 +13,9 @@ Ten main areas where also AI identify:
 8. Community Detection: Implementing algorithms to identify communities or clusters within social networks, based on patterns of connections or interactions.
 9. Social Influence Modeling: Building models to understand how individuals influence each other's behavior, beliefs, and decisions within a social system.
 10. Collaborative Filtering: Creating algorithms to make predictions or recommendations based on the preferences and behaviors of similar users within a social system.
+    
+11. An adittional template regarding basic ideology formation in society is properly added.     
 
 Taylor made code programming activity might use this initial templates as a quick short basis provided by AI. 
+
+
