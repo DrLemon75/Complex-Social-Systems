@@ -1,0 +1,47 @@
+import random
+
+
+class Agent:
+
+    def __init__(self, name, opinion):
+        self.name = name
+        self.opinion = opinion
+
+
+class SocialSystem:
+
+    def __init__(self, num_agents):
+        self.agents = [
+            Agent(f"Agent{i}", random.choice(['left', 'right']))
+            for i in range(num_agents)
+        ]
+
+    def interact(self):
+        for agent in self.agents:
+            other_agent = random.choice(self.agents)
+            if agent.opinion == other_agent.opinion:
+                agent.opinion = other_agent.opinion
+            else:
+                # Implement opinion change rules based on your system
+                if agent.opinion == 'left' and other_agent.opinion == 'right':
+                    # Example of political polarization
+                    agent.opinion = 'far-left'
+                elif agent.opinion == 'right' and other_agent.opinion == 'left':
+                    # Example of political polarization
+                    agent.opinion = 'far-right'
+
+    def get_opinions(self):
+        opinions = [agent.opinion for agent in self.agents]
+        return opinions
+
+
+# Create a social system with 100 agents
+social_system = SocialSystem(100)
+
+# Simulate interactions and opinion formation
+for _ in range(1000):  # Simulate 1000 interactions
+    social_system.interact()
+
+# Get the final opinions of agents
+final_opinions = social_system.get_opinions()
+print(final_opinions)
