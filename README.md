@@ -1,1 +1,1 @@
-Complex soscial systems is very rare topic. It entails combining dynamical systems behaviour with social science notions. This is a very simple model in which citizens interact by exchanging their political ideas, and an emergent social position arises.  
+Complex soscial systems is very rare topic. It entails combining dynamical systems behaviour with social science notions. 
